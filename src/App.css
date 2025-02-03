@@ -1,0 +1,321 @@
+/* === CSS Variables for Easy Theming === */
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --bg-color: #f4f7f6;
+  --primary-color: #3498db;
+  --primary-color-hover: #2980b9;
+  --danger-color: #e74c3c;
+  --danger-color-hover: #c0392b;
+  --text-color: #444;
+  --heading-color: #2c3e50;
+  --card-bg: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* === General Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Base Styles === */
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* === Container Styles === */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* === Card/Box Styles === */
+.box {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease;
+}
+
+.box:hover,
+.box:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+/* === Button Styles === */
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--primary-color-hover);
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.delete {
+  background-color: var(--danger-color);
+}
+
+button.delete:hover,
+button.delete:focus {
+  background-color: var(--danger-color-hover);
+}
+
+/* Ensure focus visibility for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px dashed var(--primary-color);
+  outline-offset: 4px;
+}
+
+/* === Form Elements === */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color var(--transition-speed);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="url"],
+select {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* === Grid Container for Layouts === */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+/* === Individual Grid Items === */
+.grid-item {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex-basis: 30%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.grid-item:hover,
+.grid-item:focus-within {
+  transform: translateY(-5px);
+}
+
+.grid-item img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.grid-item h3 {
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.grid-item ul li {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* === Cars List and Car Card Styles === */
+.cars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.car-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  width: 300px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.car-card:hover,
+.car-card:focus-within {
+  transform: translateY(-10px);
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.car-card h3 {
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.car-card h4 {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.car-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.car-card ul li {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.car-card button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.car-card button:hover,
+.car-card button:focus {
+  background-color: var(--primary-color-hover);
+}
+
+.car-card .delete {
+  background-color: var(--danger-color);
+}
+
+.car-card .delete:hover,
+.car-card .delete:focus {
+  background-color: var(--danger-color-hover);
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .cars-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-card {
+    width: 90%;
+  }
+}
+/* === Dealers Header === */
+.dealers-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--heading-color, #2c3e50);
+}
+
+/* === Dealers List (Grid Layout) === */
+.dealers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* === Dealer Card Styles === */
+.dealer-card {
+  background-color: var(--card-bg, #fff);
+  padding: 20px;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--box-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+  text-align: center;
+  transition: transform var(--transition-speed, 0.3s) ease-in-out;
+}
+
+.dealer-card:hover {
+  transform: translateY(-5px);
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
