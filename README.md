@@ -107,7 +107,10 @@ If you want to contribute:
 3. Make your changes and commit: `git commit -m "Description of changes"`
 4. Push the changes: `git push origin feature-branch`
 5. Submit a pull request
-Deployed backend link: https://phase-4-cardealers-project-backend-flask-x2hc.onrender.com
+my links
+1. Deployed backend link: https://phase-4-cardealers-project-backend-flask-x2hc.onrender.com
+2. Deployed frontend link: https://phase-4-car-dealers-project-frontend.vercel.app/
+3. Backend repo: https://github.com/Fidelis-Muteti/phase-4-cardealers-project-backend-flask
 
 ## Author
 **Fidelis Muteti**
